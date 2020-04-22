@@ -140,6 +140,9 @@
   <ItemGroup>
     <ClInclude Include="TicTac.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TicTac.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
