@@ -10,7 +10,10 @@ void TicTac::ExploreBestMoves(string& current_state)
 
 }
 
-void
+void TicTac::UpdateBoard(string& current_state)
+{
+
+}
 
 void TicTac::DisplayBoard()
 {
