@@ -1,12 +1,16 @@
 #include "TicTac.h"
-#include<iostream>
 
-using namespace std;
+TicTac::TicTac()
+{
+	start = "         ";
+}
 
 void TicTac::ExploreBestMoves(string& current_state)
 {
 
 }
+
+void
 
 void TicTac::DisplayBoard()
 {

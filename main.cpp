@@ -1,8 +1,7 @@
-#include "TicTac.cpp"
-
-using namespace std;
+#include "TicTac.h"
 
 int main()
 {
-	TicTac::DisplayBoard();
+	TicTac TestObject;
+	TestObject.DisplayBoard();
 }
