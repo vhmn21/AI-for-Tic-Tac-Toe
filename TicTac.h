@@ -8,14 +8,12 @@ using namespace std;
 
 class TicTac
 {
-private:
-	string start;
 public:
-	TicTac();
-	void ExploreBestMoves(string&);
+	int MinMax(int*, int);
+	void Draw(int*);
+	int Win(const int*);
+	int Comp(int*);
 	void DisplayBoard();
-	void UpdateBoard(string&);
-	int WinCheck(string&);
 };
 
 #endif
