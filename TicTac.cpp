@@ -37,13 +37,12 @@ void TicTac::Draw(int* b)
 	}
 	return;
 }
-    
 
 int TicTac::Win(const int* board)
 {
-	unsigned wins[8][3] = { {0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6} };
+	unsigned wins[8][3] = {{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
 	int i;
-	for (i = 0; i < 8; ++i)
+	for (i = 0; i < 8; i++)
 	{
 		if (board[wins[i][0]] != 0 && board[wins[i][0]] == board[wins[i][1]] && board[wins[i][1]] == board[wins[i][2]])
 		{
@@ -106,7 +105,7 @@ int TicTac::Comp(int* board)
 
 void TicTac::DisplayBoard()
 {
-	cout << "\n~~~~~~~~~~~~~Tic Tac Toe~~~~~~~~~~~~~\n";
+	cout << "~~~~~~~~~~~~~Tic Tac Toe~~~~~~~~~~~~~\n";
 	cout << "\n\n   BOARD:\n";
 	cout << " 1 | 2 | 3 " << endl;
 	cout << "---+---+---" << endl;
@@ -114,16 +113,17 @@ void TicTac::DisplayBoard()
 	cout << "---+---+---" << endl;
 	cout << " 7 | 8 | 9 " << endl;
 	cout << "Only legal moves are the numbers you see on the board. Press enter to start!\n\n";
-	int board[9] = {0};
+	getchar();
+	int board[9]{};
 	int moves = 0, k;
 	while (moves < 9)
 	{
-		int mv;
+		int move_;
 		cout << "Enter Player 1's Move\n";
-		cin >> mv;
-		if (board[mv - 1] == 0)
+		cin >> move_;
+		if (board[move_ - 1] == 0)
 		{
-			board[mv - 1] = -1;
+			board[move_ - 1] = -1;
 			moves++;
 			cout << "\n\nBoard after your move:\n";
 			Draw(board);
@@ -149,16 +149,14 @@ void TicTac::DisplayBoard()
 			cout << "Invalid Move, Try again !! \n\n";
 		}
 	}
-	switch (Win(board))
+	int choice = Win(board);
+	switch (choice)
 	{
 	case 0:
-		cout << "Its a draw.\n";
+		cout << "Its a draw.";
 		return;
 	case 1:
 		cout << "You lose.\n";
-		return;
-	case -1:
-		cout << "Congratulations, You have beaten the unbeatable\n";
 		return;
 	}
 }
